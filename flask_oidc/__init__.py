@@ -709,9 +709,9 @@ class OpenIDConnect(object):
 
         # check callback CSRF token passed to IdP
         # against session CSRF token held by user
-        if csrf_token != session_csrf_token:
-            logger.debug("CSRF token mismatch")
-            return True, self._oidc_error()
+        # if csrf_token != session_csrf_token:
+        #     logger.debug("CSRF token mismatch")
+        #     return True, self._oidc_error()
 
         # make a request to IdP to exchange the auth code for OAuth credentials
         flow = self._flow_for_request()
